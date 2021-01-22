@@ -2,43 +2,17 @@
 {% load static %}
 {% block inventario %}
 <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p class="text-white mt-5 mb-5">Bienvenido, <b>Admin</b></p>
-                </div>
-            </div>
-            <!-- row -->
-            <div class="row tm-content-row">
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block">
-                        <h2 class="tm-block-title">Ventas ultimos meses</h2>
-                        <canvas id="lineChart"></canvas>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block">
-                        <h2 class="tm-block-title">Productos mas vendidos</h2>
-                        <canvas id="barChart"></canvas>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller">
-                        <h2 class="tm-block-title">Informacion de inventario</h2>
-                        <div id="pieChartContainer">
-                            <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
-                        </div>                        
-                    </div>
-                </div>
-                
+
                 <div class="col-12 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
-                        <h2 class="tm-block-title">Lista de pedidos</h2>
+                        <h2 class="tm-block-title">Informacion de inventario</h2>
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">ID.</th>
                                     <th scope="col">NOMBRE</th>
-                                    <th scope="col">PRECIO PONDERADO</th>
+                                    <th scope="col">PRECIO COMPRA</th>
+				    <th scope="col">PRECIO PONDERADO</th>
                                     <th scope="col">PRECIO VENTA</th>
                                     <th scope="col">CANTIDAD</th>
                                     <th scope="col">CATEGORIA</th>
@@ -52,6 +26,7 @@
                                         <div class="tm-status-circle moving">
                                         </div>{{producto.nombre}}
                                     </td>
+				    <td><b>{{producto.precio_compra}}</b></td>
 				    <td><b>{{producto.costo_promedio}}</b></td>
 				    <td><b>{{producto.precio_venta}}</b></td>
 				    <td><b>{{producto.cantidad_actual}}</b></td>

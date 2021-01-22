@@ -8,4 +8,4 @@ class Producto(models.Model):
     costo_promedio = models.FloatField(blank=True)#esto es igual al precio de compra
                                                   #promediado de todos los productos
     id_categoria = models.IntegerField()
-
+    precio_compra = models.FloatField()

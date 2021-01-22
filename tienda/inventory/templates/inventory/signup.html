@@ -1,0 +1,41 @@
+{% extends 'inventory/base.html' %}
+{% load static %}
+{% block inventario %}
+<div class="container">
+  <form method='POST'>
+    <div class='text-center'>
+    {% csrf_token %}
+    <h2 class="text-center">Registro Usuario</h2>
+   <p>
+      <div class="mb-3">
+	<label for="id_nombre" class="form-label">Usuario</label>
+	{{form.nombre}}
+      </div>
+    </p> 
+    <p>
+      <div class="mb-3">
+	<label for="id_password1" class="form-label">Contraseña</label>
+	{{form.password1}}
+      </div>
+    </p>
+   <p>
+      <div class="mb-3">
+	<label for="id_password2" class="form-label">Confirmar contraseña</label>
+	{{form.password2}}
+      </div>
+    </p>
+
+
+     <button type='submit' class="btn btn-success">Registrar</button>
+    </div>
+  </form>
+  {% if error != None %}  
+  <div class="alert alert-danger">
+      <h2 class="text-center">
+	{{error}}
+      </h2> 
+    </div>
+  {% endif %}
+</div>
+         
+{% endblock %}

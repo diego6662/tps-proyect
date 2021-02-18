@@ -23,14 +23,13 @@
 				<tr>
 				  <th scope="row"><b>{{producto.id}}</b></th>
                                     <td>
-                                        <div class="tm-status-circle moving">
-                                        </div>{{producto.nombre}}
-                                    </td>
+				      <a href="{% url  'inventory:change'  producto.id %}"> <b>{{producto.nombre}}</b> </a>
+				    </td>
 				    <td><b>{{producto.precio_compra}}</b></td>
 				    <td><b>{{producto.costo_promedio}}</b></td>
 				    <td><b>{{producto.precio_venta}}</b></td>
 				    <td><b>{{producto.cantidad_actual}}</b></td>
-				    <td><b>{{producto.id_categoria}}</b></td>
+				    <td><b>{{producto.id_categoria.nombre_categoria}}</b></td>
                                 </tr>
 				{% endfor %}
                                 

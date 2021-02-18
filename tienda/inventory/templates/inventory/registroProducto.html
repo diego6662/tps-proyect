@@ -1,0 +1,31 @@
+{% extends 'inventory/base.html' %}
+{% load static %}
+{% block inventario %}
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    <div class='text-center'>
+      <h2 class="text-center">Registro producto</h2>
+      <br>
+      {{form.as_p}}
+      <label for='Category'>Categoria:</label>
+      <select name="Category" id = 'Category'>
+	{% for categoria in categorias %}
+	<option value = "{{ categoria.id }}">{{categoria.nombre_categoria}}</option>
+	{% endfor %}
+      </select>
+      <br>
+      <br>
+      <button type='submit' class="btn btn-success">Registrar</button>
+    </div>
+  </form>
+{% if error != None %}  
+  <div class="alert alert-danger">
+      <h2 class="text-center">
+	{{error}}
+      </h2> 
+    </div>
+{% endif %}
+</div>
+        
+{% endblock %}

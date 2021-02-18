@@ -1,0 +1,35 @@
+{% extends 'inventory/base.html' %}
+{% load static %}
+{% block inventario %}
+<div class="container">
+  <div class="text-center">
+    <p>
+      <h3>Nombre:{{producto.nombre}}</h3>
+    </p>
+    <p>
+      <h3>Cantidad:{{producto.cantidad_actual}}</h3>
+    </p>
+    <p>
+      <h3>Precio compra:{{producto.precio_compra}}</h3>
+    </p>
+    <p>
+      <h3>Precio promedio:{{producto.costo_promedio}}</h3>
+    </p>
+    <p>
+      <h3>Precio venta:{{producto.precio_venta}}</h3>
+    </p>
+    <p>
+    <h3>Categoria:{{producto.id_categoria}}</h3>
+    </p>
+
+
+    <a href="{% url 'inventory:add' producto.id %}">
+      <button type="button" class="btn btn-success">Agregar</button>
+    </a>
+      <button type="button" class="btn btn-warning">Modificar</button>
+     <button type="button" class="btn btn-danger">Eliminar</button>
+
+  </div>
+</div>
+        
+{% endblock %}
